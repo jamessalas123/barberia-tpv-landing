@@ -14,11 +14,12 @@ tailwind.config = {
     extend: {
       fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] },
       colors: {
-        background:'#1c1d21', foreground:'#fafafb',
-        surface:'#232428', 'surface-elevated':'#2c2d33',
-        border:'rgba(255,255,255,0.08)',
-        gold:'#e8b854', 'gold-foreground':'#2b1f0e',
-        muted:'#2c2d33', 'muted-foreground':'#a7a8b3',
+        background:'oklch(0.14 0.008 260)', foreground:'oklch(0.98 0.003 250)',
+        surface:'oklch(0.18 0.01 260)', 'surface-elevated':'oklch(0.22 0.012 260)',
+        border:'oklch(1 0 0 / 8%)',
+        gold:'oklch(0.82 0.16 82)', 'gold-foreground':'oklch(0.18 0.02 60)',
+        muted:'oklch(0.22 0.01 260)', 'muted-foreground':'oklch(0.7 0.015 260)',
+        destructive:'oklch(0.6 0.22 27)',
       }
     }
   }
@@ -26,9 +27,9 @@ tailwind.config = {
 </script>
 <style>
   body{-webkit-font-smoothing:antialiased;}
-  ::selection{background:#e8b854;color:#2b1f0e;}
-  .bg-grid{background-image:linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),linear-gradient(to bottom, rgba(255,255,255,.04) 1px, transparent 1px);background-size:48px 48px;}
-  .bg-radial-gold{background:radial-gradient(ellipse 80% 50% at 50% 0%, rgba(232,184,84,.22), transparent 70%);}
+  ::selection{background:oklch(0.82 0.16 82);color:oklch(0.18 0.02 60);}
+  .bg-grid{background-image:linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px),linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px);background-size:48px 48px;}
+  .bg-radial-gold{background:radial-gradient(ellipse 80% 50% at 50% 0%, color-mix(in oklab, oklch(0.82 0.16 82) 22%, transparent), transparent 70%);}
   html{scroll-behavior:smooth;}
 </style>
 </head>
