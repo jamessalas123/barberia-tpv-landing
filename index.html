@@ -85,25 +85,58 @@ tailwind.config = {
       </div>
       <div class="relative">
         <div class="absolute -inset-6 rounded-3xl bg-gold/10 blur-3xl"></div>
-        <div class="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl p-1">
-          <!-- Maqueta CSS del panel real -->
-          <div class="rounded-xl bg-[#1a1b1f] p-5">
-            <p class="text-[10px] tracking-widest text-muted-foreground">AGENDA</p>
-            <p class="text-lg font-bold mb-4">Sábado, 22 de agosto</p>
-            <div class="space-y-2">
-              <div class="rounded-lg border border-gold/30 bg-gold/10 px-4 py-2.5 flex items-center justify-between">
-                <span class="font-bold text-sm">09:00</span><span class="text-xs text-gold">✓ Cobrado · 18€</span>
+        <div class="relative overflow-hidden rounded-2xl border border-border bg-[#1c1d21] shadow-2xl">
+          <!-- Barra superior tipo navegador -->
+          <div class="flex items-center gap-1.5 border-b border-border/60 px-4 py-3">
+            <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-white/15"></span>
+            <span class="ml-3 text-[11px] text-muted-foreground">barberia-tpv.vercel.app</span>
+          </div>
+          <div class="flex">
+            <!-- Sidebar -->
+            <div class="hidden w-14 flex-col items-center gap-5 border-r border-border/60 bg-[#17181b] py-5 sm:flex">
+              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-gold text-gold-foreground">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="h-4 w-4"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
               </div>
-              <div class="rounded-lg border border-red-500/25 bg-red-500/10 px-4 py-2.5 flex items-center justify-between">
-                <span class="font-bold text-sm text-red-400">09:30</span><span class="text-xs text-red-400">Ocupado</span>
-              </div>
-              <div class="rounded-lg border border-emerald-500/25 bg-emerald-500/10 px-4 py-2.5 flex items-center justify-between">
-                <span class="font-bold text-sm text-emerald-400">10:00</span><span class="text-xs text-emerald-400">Libre</span>
-              </div>
+              <div class="h-5 w-5 rounded text-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+              <div class="h-5 w-5 rounded text-muted-foreground"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+              <div class="h-5 w-5 rounded text-muted-foreground"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
             </div>
-            <div class="mt-4 rounded-lg bg-surface-elevated p-4 flex items-center justify-between">
-              <span class="text-xs text-muted-foreground">Caja total real</span>
-              <span class="text-xl font-extrabold text-gold">186 €</span>
+            <!-- Panel principal -->
+            <div class="flex-1 p-5">
+              <p class="text-[10px] font-semibold tracking-widest text-muted-foreground">AGENDA</p>
+              <p class="text-lg font-bold mb-4">Sábado, 23 de agosto</p>
+              <div class="space-y-2">
+                <div class="rounded-lg border px-4 py-2.5 flex items-center justify-between" style="border-color:oklch(0.82 0.16 82 / 30%);background:oklch(0.82 0.16 82 / 8%)">
+                  <div>
+                    <span class="font-bold text-sm" style="color:oklch(0.82 0.16 82)">09:00</span>
+                    <span class="ml-2 text-sm font-semibold" style="color:oklch(0.82 0.16 82)">carlos</span>
+                  </div>
+                  <span class="text-xs font-semibold" style="color:oklch(0.82 0.16 82)">✓ 18,00 €</span>
+                </div>
+                <div class="rounded-lg border px-4 py-2.5 flex items-center justify-between" style="border-color:oklch(0.6 0.22 27 / 30%);background:oklch(0.6 0.22 27 / 8%)">
+                  <div>
+                    <span class="font-bold text-sm" style="color:oklch(0.6 0.22 27)">09:30</span>
+                    <span class="ml-2 text-sm font-semibold" style="color:oklch(0.6 0.22 27)">pedro</span>
+                  </div>
+                  <span class="rounded-md px-2.5 py-1 text-[11px] font-bold" style="background:oklch(0.6 0.22 27);color:white">COBRAR</span>
+                </div>
+                <div class="rounded-lg border px-4 py-2.5 flex items-center justify-between" style="border-color:oklch(0.68 0.18 145 / 25%);background:oklch(0.68 0.18 145 / 8%)">
+                  <span class="text-sm font-semibold" style="color:oklch(0.68 0.18 145)">10:00 — Libre</span>
+                  <span class="flex h-6 w-6 items-center justify-center rounded-md" style="border:1px solid oklch(0.68 0.18 145 / 28%);color:oklch(0.68 0.18 145)">+</span>
+                </div>
+              </div>
+              <div class="mt-4 grid grid-cols-2 gap-2">
+                <div class="rounded-lg bg-surface-elevated p-3">
+                  <p class="text-[10px] text-muted-foreground">Caja total real</p>
+                  <p class="text-lg font-extrabold text-gold">186 €</p>
+                </div>
+                <div class="rounded-lg bg-surface-elevated p-3">
+                  <p class="text-[10px] text-muted-foreground">Ingreso del negocio</p>
+                  <p class="text-lg font-extrabold text-gold">42 €</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
