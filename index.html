@@ -14,12 +14,16 @@ tailwind.config = {
     extend: {
       fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] },
       colors: {
-        background:'oklch(0.14 0.008 260)', foreground:'oklch(0.98 0.003 250)',
-        surface:'oklch(0.18 0.01 260)', 'surface-elevated':'oklch(0.22 0.012 260)',
+        background:'oklch(0.14 0.008 260 / <alpha-value>)',
+        foreground:'oklch(0.98 0.003 250 / <alpha-value>)',
+        surface:'oklch(0.18 0.01 260 / <alpha-value>)',
+        'surface-elevated':'oklch(0.22 0.012 260 / <alpha-value>)',
         border:'oklch(1 0 0 / 8%)',
-        gold:'oklch(0.82 0.16 82)', 'gold-foreground':'oklch(0.18 0.02 60)',
-        muted:'oklch(0.22 0.01 260)', 'muted-foreground':'oklch(0.7 0.015 260)',
-        destructive:'oklch(0.6 0.22 27)',
+        gold:'oklch(0.82 0.16 82 / <alpha-value>)',
+        'gold-foreground':'oklch(0.18 0.02 60 / <alpha-value>)',
+        muted:'oklch(0.22 0.01 260 / <alpha-value>)',
+        'muted-foreground':'oklch(0.7 0.015 260 / <alpha-value>)',
+        destructive:'oklch(0.6 0.22 27 / <alpha-value>)',
       }
     }
   }
@@ -29,7 +33,7 @@ tailwind.config = {
   body{-webkit-font-smoothing:antialiased;}
   ::selection{background:oklch(0.82 0.16 82);color:oklch(0.18 0.02 60);}
   .bg-grid{background-image:linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px),linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px);background-size:48px 48px;}
-  .bg-radial-gold{background:radial-gradient(ellipse 80% 50% at 50% 0%, color-mix(in oklab, oklch(0.82 0.16 82) 22%, transparent), transparent 70%);}
+  .bg-radial-gold{background:radial-gradient(ellipse 80% 50% at 50% 0%, oklch(0.82 0.16 82 / 22%), transparent 70%);}
   html{scroll-behavior:smooth;}
 </style>
 </head>
