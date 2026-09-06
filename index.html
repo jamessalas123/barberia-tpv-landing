@@ -281,8 +281,16 @@ document.getElementById('vault-grid').innerHTML = vault.map(v=>`
   </div>`).join('');
 
 const includes = ['Agenda multicaja con varios barberos','Reparto automático de comisiones','Caja en tiempo real y cierre diario','Liquidación de barberos','Registro de cada cliente y servicio','BarberBrain incluido','Soporte por WhatsApp'];
-const plans = [{country:'España',price:'14,99€',currency:'/mes'},{country:'Colombia',price:'59.900',currency:'COP/mes'}];
-document.getElementById('pricing-grid').innerHTML = plans.map(p=>`
+const plansByCountry = {
+  ES: {country:'España',price:'14,99€',currency:'/mes'},
+  CO: {country:'Colombia',price:'59.900',currency:'COP/mes'},
+};
+
+function renderPricingCard(code){
+  const p = plansByCountry[code] || plansByCountry.ES;
+  const otroCode = code === 'CO' ? 'ES' : 'CO';
+  const otro = plansByCountry[otroCode];
+  document.getElementById('pricing-grid').innerHTML = `
   <div class="relative mx-auto w-full max-w-lg">
     <div class="absolute -inset-2 rounded-3xl bg-gold/20 blur-2xl"></div>
     <div class="relative rounded-2xl border border-gold/40 bg-surface p-8 md:p-10">
@@ -291,7 +299,7 @@ document.getElementById('pricing-grid').innerHTML = plans.map(p=>`
         <span class="text-5xl font-extrabold tracking-tight md:text-6xl">${p.price}</span>
         <span class="text-muted-foreground">${p.currency}</span>
       </div>
-      <p class="mt-2 text-sm text-muted-foreground">Sin permanencia. 30 días de prueba gratis, sin tarjeta.</p>
+      <p class="mt-2 text-sm text-muted-foreground">Sin permanencia. 20 días de prueba gratis, sin tarjeta.</p>
       <a href="https://barberia-tpv.vercel.app" target="_blank" rel="noreferrer" class="mt-8 flex w-full items-center justify-center gap-2 rounded-md bg-gold px-6 py-4 text-sm font-semibold text-gold-foreground transition hover:opacity-90">
         Empezar prueba gratis
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -300,7 +308,28 @@ document.getElementById('pricing-grid').innerHTML = plans.map(p=>`
         ${includes.map(i=>`<li class="flex items-start gap-3 text-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="mt-0.5 h-4 w-4 flex-shrink-0 text-gold"><polyline points="20 6 9 17 4 12"/></svg><span class="text-foreground/90">${i}</span></li>`).join('')}
       </ul>
     </div>
-  </div>`).join('');
+    <p class="mt-4 text-center text-xs text-muted-foreground">
+      ¿No estás en ${p.country}? <button onclick="cambiarPaisPrecio('${otroCode}')" class="font-semibold text-gold underline underline-offset-2">Ver precio de ${otro.country}</button>
+    </p>
+  </div>`;
+}
+
+function cambiarPaisPrecio(code){
+  localStorage.setItem('precioPais', code);
+  renderPricingCard(code);
+}
+
+(async function initPricing(){
+  const guardado = localStorage.getItem('precioPais');
+  if(guardado){ renderPricingCard(guardado); return; }
+  try{
+    const res = await fetch('/api/geo');
+    const data = await res.json();
+    renderPricingCard(data.country === 'CO' ? 'CO' : 'ES');
+  }catch(e){
+    renderPricingCard('ES');
+  }
+})();
 </script>
 </body>
 </html>
