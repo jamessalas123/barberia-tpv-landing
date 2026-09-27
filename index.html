@@ -332,7 +332,7 @@ function renderPricingCard(code){
   const otro = plansByCountry[otroCode];
   document.getElementById('pricing-grid').innerHTML = `
   <div class="relative mx-auto w-full max-w-lg">
-    <div class="absolute -inset-2 rounded-3xl bg-gold/20 blur-2xl"></div>
+    <div class="absolute -inset-2 rounded-3xl bg-gold/20 blur-2xl" style="pointer-events:none"></div>
     <div class="relative rounded-2xl border border-gold/40 bg-surface p-8 md:p-10">
       <div class="text-sm font-semibold text-gold">${p.country}</div>
       <div class="mt-1 flex items-baseline gap-2">
