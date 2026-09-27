@@ -349,7 +349,7 @@ function renderPricingCard(code){
       </ul>
     </div>
     <p class="mt-4 text-center text-xs text-muted-foreground">
-      ¿No estás en ${p.country}? <button onclick="cambiarPaisPrecio('${otroCode}')" class="font-semibold text-gold underline underline-offset-2">Ver precio de ${otro.country}</button>
+      ¿No estás en ${p.country}? <button onclick="cambiarPaisPrecio('${otroCode}')" ontouchend="event.preventDefault();cambiarPaisPrecio('${otroCode}')" class="font-semibold text-gold underline underline-offset-2">Ver precio de ${otro.country}</button>
     </p>
   </div>`;
 }
