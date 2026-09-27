@@ -348,9 +348,6 @@ function renderPricingCard(code){
         ${includes.map(i=>`<li class="flex items-start gap-3 text-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="mt-0.5 h-4 w-4 flex-shrink-0 text-gold"><polyline points="20 6 9 17 4 12"/></svg><span class="text-foreground/90">${i}</span></li>`).join('')}
       </ul>
     </div>
-    <p class="mt-4 text-center text-xs text-muted-foreground">
-      ¿No estás en ${p.country}? <button onclick="cambiarPaisPrecio('${otroCode}')" ontouchend="event.preventDefault();cambiarPaisPrecio('${otroCode}')" class="font-semibold text-gold underline underline-offset-2">Ver precio de ${otro.country}</button>
-    </p>
   </div>`;
 }
 
