@@ -34,6 +34,17 @@ tailwind.config = {
   ::selection{background:oklch(0.82 0.16 82);color:oklch(0.18 0.02 60);}
   .bg-grid{background-image:linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px),linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px);background-size:48px 48px;}
   .bg-radial-gold{background:radial-gradient(ellipse 80% 50% at 50% 0%, oklch(0.82 0.16 82 / 22%), transparent 70%);}
+  body{
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, oklch(1 0 0 / 12%), transparent 70%),
+      linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px),
+      linear-gradient(to bottom,
+        rgb(52,52,52) 0%, rgb(58,58,58) 30%, rgb(62,62,62) 55%,
+        rgb(64,64,64) 78%, rgb(65,65,65) 88%, rgb(54,54,54) 95%, rgb(44,44,44) 100%);
+    background-size: auto, 48px 48px, 48px 48px, auto;
+    background-attachment: fixed, fixed, fixed, fixed;
+  }
   html{scroll-behavior:smooth;}
 </style>
 </head>
@@ -106,18 +117,18 @@ tailwind.config = {
       <h2 class="mt-3 text-balance text-3xl font-bold tracking-tight md:text-4xl">Barbería TPV se adapta a tu forma de trabajar.</h2>
     </div>
     <div class="mt-12 grid gap-6 md:grid-cols-2">
-      <div class="overflow-hidden rounded-2xl border border-border bg-surface transition hover:border-gold/40">
+      <div class="overflow-hidden rounded-2xl border transition" style="border-color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.06)">
         <img src="barbero-individual.png" alt="Barbero individual trabajando solo" class="h-64 w-full object-cover"/>
         <div class="p-7">
-          <h3 class="text-xl font-bold">Individual</h3>
-          <p class="mt-2 text-sm text-muted-foreground">Trabajas solo, alquilas una silla. Tu caja personal, simple y directa — sin nada que no necesites.</p>
+          <h3 class="text-xl font-bold" style="color:#fff">Individual</h3>
+          <p class="mt-2 text-sm" style="color:rgba(255,255,255,0.75)">Trabajas solo, alquilas una silla. Tu caja personal, simple y directa — sin nada que no necesites.</p>
         </div>
       </div>
-      <div class="overflow-hidden rounded-2xl border border-border bg-surface transition hover:border-gold/40">
+      <div class="overflow-hidden rounded-2xl border transition" style="border-color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.06)">
         <img src="barbero-local.png" alt="Local con varios barberos trabajando" class="h-64 w-full object-cover"/>
         <div class="p-7">
-          <h3 class="text-xl font-bold">Local</h3>
-          <p class="mt-2 text-sm text-muted-foreground">Tienes varios barberos. Una sola caja para todo el equipo, con reparto automático de comisión.</p>
+          <h3 class="text-xl font-bold" style="color:#fff">Local</h3>
+          <p class="mt-2 text-sm" style="color:rgba(255,255,255,0.75)">Tienes varios barberos. Una sola caja para todo el equipo, con reparto automático de comisión.</p>
         </div>
       </div>
     </div>
